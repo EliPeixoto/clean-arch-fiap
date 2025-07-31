@@ -24,9 +24,6 @@ public class RegistrarEstabelecimentoImpl {
         if (Objects.nonNull(buscarEstabelecimentoPorId.buscarEstabelecimentoPorId(estabelecimento.getId()))) {
             throw new NoSuchElementException("Estabelecimento já registrado");
         }
-//        if (Objects.isNull(buscarEnderecoPorIdEstabelecimento.buscarPorIdEstabelecimento(estabelecimento.getId()))) {
-//            throw new IllegalStateException("Informe um id de endereço existente");
-//        }
         return registrarEstabelecimento.registrarEstabelecimento(estabelecimento);
     }
 }

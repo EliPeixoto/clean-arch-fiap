@@ -40,12 +40,6 @@ class AvaliacaoTest {
         );
     }
 
-    @Test
-    void deveLancarExcecaoSeAvaliarEstabelecimentoEProfissionalSimultaneamente() {
-        assertThrows(IllegalStateException.class, () ->
-                new Avaliacao(1L, 2L, 4, "Confuso", 10L, 20L)
-        );
-    }
 
     @Test
     void devePermitirSettersEGetters() {

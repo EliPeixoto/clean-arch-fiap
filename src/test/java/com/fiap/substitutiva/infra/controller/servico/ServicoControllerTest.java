@@ -1,6 +1,7 @@
 package com.fiap.substitutiva.infra.controller.servico;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fiap.substitutiva.application.usecase.servico.FinalizarServico;
 import com.fiap.substitutiva.application.usecase.servico.impl.BuscarPorIdEstabelecimentoImpl;
 import com.fiap.substitutiva.application.usecase.servico.impl.ExcluirServicoImpl;
 import com.fiap.substitutiva.application.usecase.servico.impl.RegistrarServicoImpl;
@@ -35,6 +36,10 @@ class ServicoControllerTest {
 
     @Autowired
     private ObjectMapper objectMapper;
+
+    @MockBean
+    private FinalizarServico finalizarServico;
+
 
     private Servico getServico() {
         return new Servico(1L, "Depilação", 120, 9L);

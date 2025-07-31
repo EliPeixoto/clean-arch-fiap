@@ -60,8 +60,7 @@ class AgendamentoControllerTest {
 
         LocalDate date = LocalDate.of(2025,5,27);
         mockMvc.perform(get("/agendamentos/profissional/2")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(date)))
+                        .param("localDate", "2025-05-27"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].id").value(1))
                 .andExpect(jsonPath("$[0].idProfissional").value(2))

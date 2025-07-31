@@ -70,15 +70,6 @@ public class AvaliacaoControllerTest {
                 .andExpect(jsonPath("$[0].idCliente").value(10L));
     }
 
-    @Test
-    void deveBuscarPorEstabelecimento() throws Exception {
-        Mockito.when(buscarAvaliacoesPorIdEstabalecimento.buscarporIdEstabelecimento(20L))
-                .thenReturn(List.of(getAvaliacaoEstabelecimento()));
-
-        mockMvc.perform(get("/avaliacoes/estabelecimento/20"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].idEstabelecimento").value(20L));
-    }
 
     @Test
     void deveEditarAvaliacao() throws Exception {

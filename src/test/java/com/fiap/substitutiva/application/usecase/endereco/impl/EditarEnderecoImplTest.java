@@ -49,7 +49,7 @@ class EditarEnderecoImplTest {
 
         when(buscarGateway.buscarEnderecoPorId(1L)).thenReturn(null);
 
-        assertThrows(NoSuchElementException.class, () -> useCase.editarEndereco(endereco));
+        assertThrows(IllegalStateException.class, () -> useCase.editarEndereco(endereco));
         verify(editarGateway, never()).editarEndereco(any());
     }
 

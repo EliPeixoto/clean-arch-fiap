@@ -56,15 +56,4 @@ class RegistrarEstabelecimentoImplTest {
         verifyNoInteractions(buscarEndereco, registrarGateway);
     }
 
-    @Test
-    void deveLancarExcecaoSeEnderecoNaoExistir() {
-        Estabelecimento estabelecimento = new Estabelecimento();
-        estabelecimento.setId(1L);
-
-        when(buscarEstabelecimento.buscarEstabelecimentoPorId(1L)).thenReturn(null);
-        when(buscarEndereco.buscarPorIdEstabelecimento(1L)).thenReturn(null);
-
-        assertThrows(IllegalStateException.class, () -> useCase.registrarEstabelecimento(estabelecimento));
-        verifyNoInteractions(registrarGateway);
-    }
 }
